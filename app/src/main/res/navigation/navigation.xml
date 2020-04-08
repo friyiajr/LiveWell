@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_heartRateAnalysisFragment"
+            app:destination="@id/heartRateAnalysisFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/heartRateAnalysisFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.HeartRateAnalysisFragment"
+        android:label="HeartRateAnalysisFragment"
+        tools:layout="@layout/fragment_heart_rate_analysis" />
+
+</navigation>
