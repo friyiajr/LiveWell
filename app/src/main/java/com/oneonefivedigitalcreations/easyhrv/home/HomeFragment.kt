@@ -25,7 +25,8 @@ class HomeFragment : Fragment() {
                 R.layout.fragment_home, container, false)
 
         binding.button.setOnClickListener(
-          Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_heartRateAnalysisFragment)
+          Navigation.createNavigateOnClickListener(
+              R.id.action_homeFragment_to_startSurveyFragment)
         )
 
         return binding.root

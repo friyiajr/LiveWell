@@ -4,20 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
     app:startDestination="@id/homeFragment">
-
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.oneonefivedigitalcreations.easyhrv.home.HomeFragment"
         android:label="HomeFragment"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_heartRateAnalysisFragment"
-            app:destination="@id/heartRateAnalysisFragment" />
+            android:id="@+id/action_homeFragment_to_startSurveyFragment"
+            app:destination="@id/startSurveyFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/heartRateAnalysisFragment"
-        android:name="com.oneonefivedigitalcreations.easyhrv.survey.HeartRateAnalysisFragment"
-        android:label="HeartRateAnalysisFragment"
-        tools:layout="@layout/fragment_heart_rate_analysis" />
 
+    <fragment
+        android:id="@+id/startSurveyFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.startsurvey.StartSurveyFragment"
+        android:label="StartSurveyFragment"
+        tools:layout="@layout/fragment_start_survey">
+        <action
+            android:id="@+id/action_startSurveyFragment_to_heatRateAnalysisFragment"
+            app:destination="@id/heatRateAnalysisFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/heatRateAnalysisFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.heartrateanalysis.HeatRateAnalysisFragment"
+        android:label="HeatRateAnalysisFragment"
+        tools:layout="@layout/fragment_heart_rate_analysis"/>
 </navigation>
