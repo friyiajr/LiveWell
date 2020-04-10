@@ -24,10 +24,9 @@ class HomeFragment : Fragment() {
             DataBindingUtil.inflate(inflater,
                 R.layout.fragment_home, container, false)
 
-        binding.button.setOnClickListener(
+        binding.startNow.setOnClickListener(
           Navigation.createNavigateOnClickListener(
-              R.id.action_homeFragment_to_startSurveyFragment)
-        )
+              R.id.action_homeFragment_to_startSurveyFragment))
 
         return binding.root
     }

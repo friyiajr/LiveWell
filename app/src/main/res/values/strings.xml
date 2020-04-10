@@ -7,7 +7,13 @@
     <string name="happy_monday">Happy Monday!</string>
     <string name="you_haven_t_taken_your_survey_yet_tap_below_to_start">You haven’t taken your survey yet, tap below to start!</string>
     <string name="start_now">Start Now!</string>
-    <string name="start_heart_rate_analysis">Start Heart Rate Analysis</string>
     <string name="tap_start_now_and_leave_the_sensor">Tap Start now and leave the sensor on for 1 minute</string>
     <string name="start_wellness_survey">Start Wellness Survey</string>
+    <string name="start_heart_rate_analysis">Start Heart Rate Analysis</string>
+    <string name="heart_rate">Heart Rate</string>
+    <string name="bpm">-- bpm</string>
+    <string name="hrv">HRV</string>
+    <string name="_00">00</string>
+    <string name="time_remaining">Time Remaining</string>
+    <string name="_00_00">00:00</string>
 </resources>

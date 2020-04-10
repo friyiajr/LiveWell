@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.oneonefivedigitalcreations.easyhrv.R
-import com.oneonefivedigitalcreations.easyhrv.databinding.FragmentStartSurveyBinding
+import com.oneonefivedigitalcreations.easyhrv.databinding.FragmentHeartRateAnalysisBinding
 
 /**
  * A simple [Fragment] subclass.
@@ -18,7 +18,7 @@ class HeatRateAnalysisFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding: FragmentStartSurveyBinding =
+        val binding: FragmentHeartRateAnalysisBinding =
             DataBindingUtil.inflate(inflater,
                 R.layout.fragment_heart_rate_analysis, container, false)
 
