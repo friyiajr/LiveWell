@@ -28,5 +28,16 @@
         android:id="@+id/heatRateAnalysisFragment"
         android:name="com.oneonefivedigitalcreations.easyhrv.survey.heartrateanalysis.HeatRateAnalysisFragment"
         android:label="HeatRateAnalysisFragment"
-        tools:layout="@layout/fragment_heart_rate_analysis"/>
+        tools:layout="@layout/fragment_heart_rate_analysis">
+        <action
+            android:id="@+id/action_heatRateAnalysisFragment_to_sleepAnalysisFragment"
+            app:destination="@id/sleepAnalysisFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sleepAnalysisFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.sleepanalysis.SleepAnalysisFragment"
+        android:label="SleepAnalysisFragment"
+        tools:layout="@layout/fragment_sleep_analysis"/>
+
 </navigation>
