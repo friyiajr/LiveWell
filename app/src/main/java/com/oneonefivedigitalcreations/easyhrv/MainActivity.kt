@@ -24,9 +24,12 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
-
     private var mBluetoothLeService: BluetoothLeService? = null
     private val kPermissionRequestLocation = 99
+
+    /**
+     * Callback that allows the main activity to respond to bluetooth events
+     */
     private val mServiceConnection: ServiceConnection = object : ServiceConnection {
         override fun onServiceConnected(componentName: ComponentName, service: IBinder) {
             mBluetoothLeService = (service as LocalBinder).service
@@ -48,18 +51,32 @@ class MainActivity : AppCompatActivity() {
         )
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+    /**
+     * Performs actions necessary to get the navigation drawer and back button to
+     * work in the application
+     */
+    private fun initNavigation() {
         drawerLayout = binding.drawerLayout
         val navController = this.findNavController(R.id.myNavHostFragment)
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(binding.navView, navController)
+    }
 
+    /**
+     * Performs actions necessary to start Bluetooth in the application
+     */
+    private fun initBluetooth() {
         val gattServiceIntent = Intent(applicationContext, BluetoothLeService::class.java)
         bindService(gattServiceIntent, mServiceConnection, Context.BIND_AUTO_CREATE)
+    }
 
-        // TODO: Add this back when we have a connection modal
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        initNavigation()
+        initBluetooth()
+
+        // TODO: Move this code to a modal to connect the heart rate monitor
 //        binding.connectToPeripheral.setOnClickListener {
 //            mBluetoothLeService!!.connectToPeripheral("08:7C:BE:CD:66:CE")
 //        }
