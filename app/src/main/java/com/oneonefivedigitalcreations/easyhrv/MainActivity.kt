@@ -49,9 +49,10 @@ class MainActivity : AppCompatActivity() {
         val gattServiceIntent = Intent(applicationContext, BluetoothLeService::class.java)
         bindService(gattServiceIntent, mServiceConnection, Context.BIND_AUTO_CREATE)
 
-        binding.connectToPeripheral.setOnClickListener {
-            mBluetoothLeService!!.connectToPeripheral("08:7C:BE:CD:66:CE")
-        }
+        // TODO: Add this back when we have a connection modal
+//        binding.connectToPeripheral.setOnClickListener {
+//            mBluetoothLeService!!.connectToPeripheral("08:7C:BE:CD:66:CE")
+//        }
     }
 
     override fun onRequestPermissionsResult(

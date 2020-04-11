@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_startSurveyFragment"
+            app:destination="@id/startSurveyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/startSurveyFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.startsurvey.StartSurveyFragment"
+        android:label="StartSurveyFragment"
+        tools:layout="@layout/fragment_start_survey">
+        <action
+            android:id="@+id/action_startSurveyFragment_to_heatRateAnalysisFragment"
+            app:destination="@id/heatRateAnalysisFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/heatRateAnalysisFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.heartrateanalysis.HeatRateAnalysisFragment"
+        android:label="HeatRateAnalysisFragment"
+        tools:layout="@layout/fragment_heart_rate_analysis">
+        <action
+            android:id="@+id/action_heatRateAnalysisFragment_to_sleepAnalysisFragment"
+            app:destination="@id/sleepAnalysisFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/sleepAnalysisFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.sleepanalysis.SleepAnalysisFragment"
+        android:label="SleepAnalysisFragment"
+        tools:layout="@layout/fragment_sleep_analysis" />
+
+</navigation>
