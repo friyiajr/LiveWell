@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.oneonefivedigitalcreations.easyhrv.home.HomeFragment"
-        android:label="HomeFragment"
+        android:label="LiveWell"
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_startSurveyFragment"
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/startSurveyFragment"
         android:name="com.oneonefivedigitalcreations.easyhrv.survey.startsurvey.StartSurveyFragment"
-        android:label="StartSurveyFragment"
+        android:label="Wellness Survey"
         tools:layout="@layout/fragment_start_survey">
         <action
             android:id="@+id/action_startSurveyFragment_to_heatRateAnalysisFragment"
@@ -28,7 +28,7 @@
     <fragment
         android:id="@+id/heatRateAnalysisFragment"
         android:name="com.oneonefivedigitalcreations.easyhrv.survey.heartrateanalysis.HeatRateAnalysisFragment"
-        android:label="HeatRateAnalysisFragment"
+        android:label="Heart Rate Analysis"
         tools:layout="@layout/fragment_heart_rate_analysis">
         <action
             android:id="@+id/action_heatRateAnalysisFragment_to_sleepAnalysisFragment"
@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/sleepAnalysisFragment"
         android:name="com.oneonefivedigitalcreations.easyhrv.survey.sleepanalysis.SleepAnalysisFragment"
-        android:label="SleepAnalysisFragment"
+        android:label="Wellness Questionnaire"
         tools:layout="@layout/fragment_sleep_analysis" />
 
 </navigation>
