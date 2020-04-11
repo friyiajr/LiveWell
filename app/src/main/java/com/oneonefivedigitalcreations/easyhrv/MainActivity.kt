@@ -11,6 +11,8 @@ import android.os.IBinder
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 
 import com.oneonefivedigitalcreations.easyhrv.bluetoothle.BluetoothLeService
 import com.oneonefivedigitalcreations.easyhrv.bluetoothle.BluetoothLeService.LocalBinder
@@ -26,10 +28,10 @@ class MainActivity : AppCompatActivity() {
 
     private val mServiceConnection: ServiceConnection = object : ServiceConnection {
         override fun onServiceConnected(componentName: ComponentName, service: IBinder) {
-            mBluetoothLeService = (service as LocalBinder).service
-            mBluetoothLeService!!.initialize()
-            requestLocationPermissions()
-            mBluetoothLeService!!.scanForPeripherals()
+//            mBluetoothLeService = (service as LocalBinder).service
+//            mBluetoothLeService!!.initialize()
+//            requestLocationPermissions()
+//            mBluetoothLeService!!.scanForPeripherals()
         }
 
         override fun onServiceDisconnected(componentName: ComponentName) {
@@ -46,6 +48,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        NavigationUI.setupActionBarWithNavController(this, navController)
+
         val gattServiceIntent = Intent(applicationContext, BluetoothLeService::class.java)
         bindService(gattServiceIntent, mServiceConnection, Context.BIND_AUTO_CREATE)
 
@@ -53,6 +58,11 @@ class MainActivity : AppCompatActivity() {
 //        binding.connectToPeripheral.setOnClickListener {
 //            mBluetoothLeService!!.connectToPeripheral("08:7C:BE:CD:66:CE")
 //        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = this.findNavController(R.id.myNavHostFragment)
+        return navController.navigateUp()
     }
 
     override fun onRequestPermissionsResult(
