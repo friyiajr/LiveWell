@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Simple HRV</string>
-    <string name="button">Button</string>
     <string name="happy_monday">Happy Monday!</string>
     <string name="you_haven_t_taken_your_survey_yet_tap_below_to_start">You haven’t taken your survey yet, tap below to start!</string>
     <string name="start_now">Start Now!</string>
@@ -20,4 +19,6 @@
     <string name="_10">10</string>
     <string name="_1">1</string>
     <string name="how_would_you_rate_your_sleep_last_night">How would you rate your sleep last night?</string>
+    <string name="about">About</string>
+    <string name="high">High</string>
 </resources>

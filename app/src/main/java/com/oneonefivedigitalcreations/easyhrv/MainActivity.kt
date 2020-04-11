@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 
@@ -30,10 +29,10 @@ class MainActivity : AppCompatActivity() {
     private val kPermissionRequestLocation = 99
     private val mServiceConnection: ServiceConnection = object : ServiceConnection {
         override fun onServiceConnected(componentName: ComponentName, service: IBinder) {
-//            mBluetoothLeService = (service as LocalBinder).service
-//            mBluetoothLeService!!.initialize()
-//            requestLocationPermissions()
-//            mBluetoothLeService!!.scanForPeripherals()
+            mBluetoothLeService = (service as LocalBinder).service
+            mBluetoothLeService!!.initialize()
+            requestLocationPermissions()
+            mBluetoothLeService!!.scanForPeripherals()
         }
 
         override fun onServiceDisconnected(componentName: ComponentName) {
@@ -42,9 +41,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestLocationPermissions() {
-        ActivityCompat.requestPermissions(this,
+        ActivityCompat.requestPermissions(
+            this,
             arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-            kPermissionRequestLocation)
+            kPermissionRequestLocation
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,8 +76,9 @@ class MainActivity : AppCompatActivity() {
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if(requestCode == kPermissionRequestLocation &&
-            grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+        if (requestCode == kPermissionRequestLocation &&
+            grantResults[0] == PackageManager.PERMISSION_GRANTED
+        ) {
             mBluetoothLeService!!.scanForPeripherals()
         }
     }

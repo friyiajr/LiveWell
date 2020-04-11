@@ -121,7 +121,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/muli_bold"
-                        android:text="High"
+                        android:text="@string/high"
                         android:textSize="18sp"
                         tools:layout_editor_absoluteX="313dp"
                         tools:layout_editor_absoluteY="372dp" />
