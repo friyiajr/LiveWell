@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         initNavigation()
-        initBluetooth()
+        //initBluetooth()
 
         // TODO: Move this code to a modal to connect the heart rate monitor
 //        binding.connectToPeripheral.setOnClickListener {
