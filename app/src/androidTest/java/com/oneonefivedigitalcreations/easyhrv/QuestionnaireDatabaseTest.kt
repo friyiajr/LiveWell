@@ -1,11 +1,9 @@
 package com.oneonefivedigitalcreations.easyhrv
 
 import android.content.Context
-import android.util.Log
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.platform.app.InstrumentationRegistry
 import com.oneonefivedigitalcreations.easyhrv.database.QuestionnareDatabase
 import com.oneonefivedigitalcreations.easyhrv.models.questionnaireresult.QuestionnaireResult
 import com.oneonefivedigitalcreations.easyhrv.models.questionnaireresult.QuestionnaireResultDAO
@@ -31,21 +29,30 @@ class QuestionnaireDatabaseTest {
             .build()
 
         questionnaireResultDAO = db.questionnaireResultDAO
-
     }
 
     @After
     @Throws(IOException::class)
     fun closeDb() {
-       db.close()
+        db.close()
     }
 
     @Test
     @Throws(Exception::class)
     fun insertAndGetNight() {
-        val result = QuestionnaireResult()
+        val result = QuestionnaireResult(
+            userId = "USER_ID",
+            heartRate = 54,
+            hrv = 65,
+            stress = 5,
+            sleepRating = 7,
+            supplementation = true,
+            water = 5
+        )
+
         questionnaireResultDAO.insert(result)
-        val currentResult = questionnaireResultDAO.getQuestionnaireResultById(0L)
-        assertEquals(-1, currentResult?.hrv)
+        val currentResult = questionnaireResultDAO.getQuestionnaireResultById(result.id);
+
+        assertEquals(result == currentResult, true)
     }
 }

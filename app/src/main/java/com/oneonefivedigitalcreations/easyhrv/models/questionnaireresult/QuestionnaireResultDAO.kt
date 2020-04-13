@@ -14,9 +14,9 @@ interface QuestionnaireResultDAO {
     @Update
     fun update(questionnaireResult: QuestionnaireResult)
 
-    @Query("SELECT * FROM questionnaire_result WHERE id = :id LIMIT 1")
-    fun getQuestionnaireResultById(id: Long): QuestionnaireResult?
+    @Query("SELECT * FROM questionnaire_results WHERE id = :id")
+    fun getQuestionnaireResultById(id: String): QuestionnaireResult?
 
-    @Query("SELECT * FROM questionnaire_result")
+    @Query("SELECT * FROM questionnaire_results")
     fun getAllQuestionnaireResults(): LiveData<List<QuestionnaireResult>>
 }
