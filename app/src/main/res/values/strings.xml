@@ -21,4 +21,8 @@
     <string name="how_would_you_rate_your_sleep_last_night">How would you rate your sleep last night?</string>
     <string name="about">About</string>
     <string name="high">High</string>
+    <string name="l">L</string>
+    <string name="quantity">Quantity</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
 </resources>

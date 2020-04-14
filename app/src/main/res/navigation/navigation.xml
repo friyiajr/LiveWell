@@ -36,8 +36,8 @@
 
     <fragment
         android:id="@+id/sleepAnalysisFragment"
-        android:name="com.oneonefivedigitalcreations.easyhrv.survey.sleepanalysis.SleepAnalysisFragment"
+        android:name="com.oneonefivedigitalcreations.easyhrv.survey.questionnaire.QuestionnaireFragment"
         android:label="Wellness Questionnaire"
-        tools:layout="@layout/fragment_sleep_analysis" />
+        tools:layout="@layout/fragment_questionnaire" />
 
 </navigation>
